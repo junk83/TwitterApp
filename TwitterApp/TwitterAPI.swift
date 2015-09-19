@@ -90,7 +90,8 @@ class TwitterAPI{
                 
                 callback()
                 //タイムラインを取得する
-                self.downloadTwitterTimeLine()
+                //self.downloadTwitterTimeLine()
+                
                 
             }
         }
@@ -103,7 +104,7 @@ class TwitterAPI{
     Twitterのタイムラインを取得する
     */
     
-    func downloadTwitterTimeLine(){
+    func downloadTwitterTimeLine(callback:() -> Void){
         
         //自分の投稿一覧は「user_timeline.json」で取得可能
         let URL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
@@ -130,7 +131,7 @@ class TwitterAPI{
                             //println(url)
                             let timeline = ["title":text, "profile_image_url":url]
                             self.dataArray.append(timeline)
-                            //println(self.dataArray)
+                            println(self.dataArray)
                             
                     }
                     /*
@@ -147,7 +148,7 @@ class TwitterAPI{
                     */
                     
                 }
-                
+                callback()
             }
         }
         

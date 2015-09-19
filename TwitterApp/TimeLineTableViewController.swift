@@ -20,13 +20,19 @@ class TimeLineTableViewController: UITableViewController {
         
         
         twitter.loginTwitter { () -> Void in
+            
+            self.twitter.downloadTwitterTimeLine{ () -> Void in
+                self.dataArray = self.twitter.dataArray
+                println(self.dataArray)
+                //追記
+                dispatch_async(dispatch_get_main_queue(),{ () ->Void in
+                    self.tableView.reloadData()
+                })
+            }
 
         }
-        //self.twitter.downloadTwitterTimeLine()
-        self.dataArray = self.twitter.dataArray
-        println(self.dataArray)
-        self.tableView.reloadData()
-
+        
+        
 
         
     }
