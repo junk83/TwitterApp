@@ -131,7 +131,7 @@ class TwitterAPI{
                             //println(url)
                             let timeline = ["title":text, "profile_image_url":url]
                             self.dataArray.append(timeline)
-                            println(self.dataArray)
+                            //println(self.dataArray)
                             
                     }
                     /*

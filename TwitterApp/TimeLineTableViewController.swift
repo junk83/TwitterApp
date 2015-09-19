@@ -23,7 +23,7 @@ class TimeLineTableViewController: UITableViewController {
             
             self.twitter.downloadTwitterTimeLine{ () -> Void in
                 self.dataArray = self.twitter.dataArray
-                println(self.dataArray)
+                //println(self.dataArray)
                 //追記
                 dispatch_async(dispatch_get_main_queue(),{ () ->Void in
                     self.tableView.reloadData()
@@ -34,6 +34,15 @@ class TimeLineTableViewController: UITableViewController {
         
         
 
+        
+    }
+    
+    
+    
+    @IBAction func tapButton(sender: AnyObject) {
+    
+        var uiView = self
+        self.twitter.tapTweetButton(uiView)
         
     }
     
@@ -55,7 +64,7 @@ class TimeLineTableViewController: UITableViewController {
         if let imageURLString = dataArray[indexPath.row]["profile_image_url"],
             let imageURL = NSURL(string: imageURLString){
                 
-                println(imageURLString)
+                //println(imageURLString)
                 cell.iconimageView?.sd_setImageWithURL(imageURL, placeholderImage: UIImage(named: "placeholderimage"))
                 
         }

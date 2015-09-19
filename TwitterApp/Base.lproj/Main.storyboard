@@ -33,7 +33,7 @@
                                                 <constraint firstAttribute="height" constant="174" id="whC-AZ-hpF"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -98,7 +98,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="タイムライン一覧" id="P7x-aV-rlr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="V9W-hy-XvC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="V9W-hy-XvC">
+                            <connections>
+                                <action selector="tapButton:" destination="Wrf-QE-T7h" id="fRd-no-1iq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
